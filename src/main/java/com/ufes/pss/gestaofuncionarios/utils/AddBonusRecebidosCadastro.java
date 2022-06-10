@@ -9,9 +9,9 @@ public class AddBonusRecebidosCadastro {
     public static void addBonusRecebidoCadastro(Funcionario funcionario, String bonusInicial) {
         bonusNormalGeneroso(funcionario, bonusInicial);
         bonusFuncionarioDoMes(funcionario);
-        bonusAnosDeServico(funcionario);
-        bonusFaltas(funcionario);
-
+        bonusTempoDeServico(funcionario);
+        bonusAssiduidade(funcionario);
+        bonusFormacao(funcionario);
     }
 
     private static void bonusFuncionarioDoMes(Funcionario funcionario) {
@@ -30,10 +30,25 @@ public class AddBonusRecebidosCadastro {
         if (bonusInicial.toLowerCase().equals("generoso")) {
             funcionario.addBonus(new Bonus("Generoso", 0.15));
         }
-
+        
     }
 
-    private static void bonusAnosDeServico(Funcionario funcionario) {
+    private static void bonusFormacao(Funcionario funcionario) {
+        if (funcionario.getFormacao().toLowerCase().equals("graduação")) {
+            funcionario.addBonus(new Bonus("Graduação", 0.1));
+        }
+
+        if (funcionario.getFormacao().toLowerCase().equals("mestrado")) {
+            funcionario.addBonus(new Bonus("Mestrado", 0.15));
+        }
+
+        if (funcionario.getFormacao().toLowerCase().equals("doutorado")) {
+            funcionario.addBonus(new Bonus("Doutorado", 0.2));
+        }
+
+    }
+    
+    private static void bonusTempoDeServico(Funcionario funcionario) {
         if ((LocalDate.now().getYear() - funcionario.getAdmissao().getYear()) >= 1
                 && (LocalDate.now().getYear() - funcionario.getAdmissao().getYear()) <= 5) {
             funcionario.addBonus(new Bonus("1-5 Anos de Serviço", 0.02));
@@ -49,7 +64,7 @@ public class AddBonusRecebidosCadastro {
 
     }
 
-    private static void bonusFaltas(Funcionario funcionario) {
+    private static void bonusAssiduidade(Funcionario funcionario) {
         if (funcionario.getNumFaltas() == 0) {
             funcionario.addBonus(new Bonus("0 Faltas", 0.1));
         } else if (funcionario.getNumFaltas() <= 3) {

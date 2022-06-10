@@ -5,13 +5,16 @@
 
 package com.ufes.pss.gestaofuncionarios;
 
+import com.ufes.pss.gestaofuncionarios.presenter.PrincipalPresenter;
+import java.io.IOException;
+
 /**
  *
  * @author Valmir Aguiar
  */
 public class Principal {
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+    public static void main(String[] args) throws IOException {
+        new PrincipalPresenter();
     }
 }

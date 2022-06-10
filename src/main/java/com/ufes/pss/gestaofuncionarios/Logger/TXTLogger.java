@@ -63,7 +63,7 @@ public class TXTLogger extends AbstractLogger {
     public void logCalculaSalario(ArrayList<String> funcionariosCalculados) {
         try {
             if (funcionariosCalculados.size() > 0) {
-                String info = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss").format(LocalDateTime.now()) + " Salário claculado para o(s) funcionário(s): [\n";
+                String info = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss").format(LocalDateTime.now()) + " Salário calculado para o(s) funcionário(s): [\n";
                 StringBuilder sb = new StringBuilder();
                 sb.append(info);
                 for (String nome : funcionariosCalculados) {

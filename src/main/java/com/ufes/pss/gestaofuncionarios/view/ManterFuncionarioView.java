@@ -5,6 +5,7 @@
 package com.ufes.pss.gestaofuncionarios.view;
 
 import java.text.ParseException;
+import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.text.MaskFormatter;
 
@@ -56,6 +57,8 @@ public class ManterFuncionarioView extends javax.swing.JInternalFrame {
         btnEditar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         txtAdmissao = new javax.swing.JFormattedTextField(mfdata);
+        cbxFormacao = new javax.swing.JComboBox<>();
+        lblFormacao = new javax.swing.JLabel();
 
         setTitle("Manter Funcionário");
 
@@ -95,17 +98,17 @@ ckbFuncionarioDoMes.addActionListener(new java.awt.event.ActionListener() {
 
     txtAdmissao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
 
+    cbxFormacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Graduação", "Mestrado", "Doutorado"}));
+
+    lblFormacao.setText("Formação");
+
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(layout.createSequentialGroup()
-            .addGap(29, 29, 29)
+            .addGap(44, 44, 44)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(lblCargo)
-                    .addGap(18, 18, 18)
-                    .addComponent(cbxCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnFechar)
@@ -116,6 +119,7 @@ ckbFuncionarioDoMes.addActionListener(new java.awt.event.ActionListener() {
                         .addGap(18, 18, 18)
                         .addComponent(btnSalvar))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblFaltas)
@@ -141,8 +145,16 @@ ckbFuncionarioDoMes.addActionListener(new java.awt.event.ActionListener() {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtSalario, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtIdade, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtAdmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-            .addGap(0, 35, Short.MAX_VALUE))
+                            .addComponent(txtAdmissao, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(lblCargo)
+                        .addComponent(lblFormacao))
+                    .addGap(18, 18, 18)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(cbxCargo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cbxFormacao, javax.swing.GroupLayout.PREFERRED_SIZE, 664, javax.swing.GroupLayout.PREFERRED_SIZE))))
+            .addGap(61, 61, 61))
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,15 +163,19 @@ ckbFuncionarioDoMes.addActionListener(new java.awt.event.ActionListener() {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(lblCargo)
                 .addComponent(cbxCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(18, 18, 18)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(cbxFormacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblFormacao))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(24, 24, 24)
+                    .addGap(25, 25, 25)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblNome)
                         .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(27, 27, 27))
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createSequentialGroup()
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblIdade))
@@ -181,7 +197,7 @@ ckbFuncionarioDoMes.addActionListener(new java.awt.event.ActionListener() {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblAdmissao)
                         .addComponent(txtAdmissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(btnFechar)
                 .addComponent(btnSalvar)
@@ -204,11 +220,13 @@ ckbFuncionarioDoMes.addActionListener(new java.awt.event.ActionListener() {
     private javax.swing.JButton btnSalvar;
     private javax.swing.JComboBox<String> cbxBonus;
     private javax.swing.JComboBox<String> cbxCargo;
+    private javax.swing.JComboBox<String> cbxFormacao;
     private javax.swing.JCheckBox ckbFuncionarioDoMes;
     private javax.swing.JLabel lblAdmissao;
     private javax.swing.JLabel lblBonus;
     private javax.swing.JLabel lblCargo;
     private javax.swing.JLabel lblFaltas;
+    private javax.swing.JLabel lblFormacao;
     private javax.swing.JLabel lblIdade;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblSalario;
@@ -369,6 +387,14 @@ ckbFuncionarioDoMes.addActionListener(new java.awt.event.ActionListener() {
 
     public void setTxtSalario(javax.swing.JTextField txtSalario) {
         this.txtSalario = txtSalario;
+    }
+   
+    public JComboBox<String> getCbxFormacao() {
+        return cbxFormacao;
+    }
+
+    public void setCbxFormacao(JComboBox<String> cbxFormacao) {
+        this.cbxFormacao = cbxFormacao;
     }
 
     /* 

@@ -40,6 +40,7 @@ public class BuscarFuncionarioView extends javax.swing.JInternalFrame {
         btnFechar = new javax.swing.JButton();
         btnVisualizar = new javax.swing.JButton();
         btnBonus = new javax.swing.JButton();
+        btnTodosFuncionarios = new javax.swing.JButton();
         btnNovo = new javax.swing.JButton();
 
         setTitle("Buscar Funcionário");
@@ -67,6 +68,8 @@ public class BuscarFuncionarioView extends javax.swing.JInternalFrame {
 
         btnBonus.setText("Ver bônus");
 
+        btnTodosFuncionarios.setText("Todos funcionarios");
+
         btnNovo.setText("Novo");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -79,6 +82,8 @@ public class BuscarFuncionarioView extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnFechar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnTodosFuncionarios)
+                        .addGap(18, 18, 18)
                         .addComponent(btnNovo)
                         .addGap(18, 18, 18)
                         .addComponent(btnBonus)
@@ -108,6 +113,7 @@ public class BuscarFuncionarioView extends javax.swing.JInternalFrame {
                     .addComponent(btnFechar)
                     .addComponent(btnVisualizar)
                     .addComponent(btnBonus)
+                    .addComponent(btnTodosFuncionarios)
                     .addComponent(btnNovo))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
@@ -151,6 +157,14 @@ public class BuscarFuncionarioView extends javax.swing.JInternalFrame {
         return btnVisualizar;
     }
 
+    public void setBtnTodosFuncionarios(JButton btnTodosFuncionarios) {
+        this.btnTodosFuncionarios = btnTodosFuncionarios;
+    }
+
+    public JButton getBtnTodosFuncionarios() {
+        return btnTodosFuncionarios;
+    }
+    
     public void setBtnVisualizar(JButton btnVisualizar) {
         this.btnVisualizar = btnVisualizar;
     }
@@ -193,6 +207,7 @@ public class BuscarFuncionarioView extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnBusca;
     private javax.swing.JButton btnFechar;
     private javax.swing.JButton btnNovo;
+    private javax.swing.JButton btnTodosFuncionarios;
     private javax.swing.JButton btnVisualizar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblNome;

@@ -28,6 +28,8 @@
                   <Group type="102" attributes="0">
                       <Component id="btnFechar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnTodosFuncionarios" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnNovo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnBonus" min="-2" max="-2" attributes="0"/>
@@ -63,6 +65,7 @@
                   <Component id="btnFechar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnVisualizar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnBonus" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnTodosFuncionarios" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnNovo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="22" max="32767" attributes="0"/>
@@ -118,6 +121,11 @@
     <Component class="javax.swing.JButton" name="btnBonus">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ver b&#xf4;nus"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnTodosFuncionarios">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Todos funcionarios"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnNovo">
