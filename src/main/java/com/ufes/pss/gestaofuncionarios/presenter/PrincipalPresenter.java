@@ -4,12 +4,22 @@ import com.ufes.pss.gestaofuncionarios.view.PrincipalView;
 import com.ufes.pss.gestaofuncionarios.collection.FuncionarioCollection;
 import com.ufes.pss.gestaofuncionarios.factory.SistemaDeLogs;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 public class PrincipalPresenter {
     
     private PrincipalView view;
-    private FuncionarioCollection funcionarios;
-    private SistemaDeLogs logs;
+    private final FuncionarioCollection funcionarios;
+    private final SistemaDeLogs logs;
+    
+    public PrincipalPresenter() throws IOException{
+        
+        funcionarios = new FuncionarioCollection();
+        logs = new SistemaDeLogs("TXT");
+        
+        inicializa();
+        
+    }
     
     public void inicializa(){
         
@@ -35,23 +45,38 @@ public class PrincipalPresenter {
     }
 
     private void informacoesDoSistema() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        updateNumFuncionarios();
+        updateTipoLog();
+        view.getLblNumVersao().setText("1.0-SNAPSHOT");
+        view.getLblTipoPersistencia().setText("none");
     }
 
     private void addFuncionario() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ManterFuncionarioPresenter manterFuncionarioPresenter = new ManterFuncionarioPresenter(this, funcionarios, logs);
     }
 
     private void buscarFuncionario() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        BuscarFuncionarioPresenter buscarFuncionarioPresenter = new BuscarFuncionarioPresenter(this, funcionarios, logs);
     }
 
     private void calcularSalario() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        CalcularSalarioPresenter calcularSalarioPresenter = new CalcularSalarioPresenter(this, funcionarios, logs);CalcularSalarioPresenter calcularSalarioPresenter = new CalcularSalarioPresenter(this, funcionarios, logs);
     }
 
     private void alterarLogs() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        SistemaDeLogsPresenter sistemaDeLogsPresenter = new SistemaDeLogsPresenter(this, logs);
+    }
+
+    private void updateNumFuncionarios() {
+        view.getLblNumFuncionarios().setText(Integer.toString(funcionarios.getFuncionarios().size()));
+    }
+
+    private void updateTipoLog() {
+        view.getLblTipoLogs().setText(logs.getTipo().toUpperCase());
+    }
+    
+    public PrincipalView getView(){
+        return view;
     }
     
 }
