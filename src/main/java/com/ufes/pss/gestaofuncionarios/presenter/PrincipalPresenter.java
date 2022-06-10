@@ -1,13 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.ufes.pss.gestaofuncionarios.presenter;
 
-/**
- *
- * @author Andrico
- */
+import com.ufes.pss.gestaofuncionarios.view.PrincipalView;
+import com.ufes.pss.gestaofuncionarios.collection.FuncionarioCollection;
+import com.ufes.pss.gestaofuncionarios.factory.SistemaDeLogs;
+
 public class PrincipalPresenter {
+    
+    private PrincipalView view;
+    private FuncionarioCollection funcionarios;
+    private SistemaDeLogs logs;
+    
+    public void inicializa(){
+        
+    }
     
 }
